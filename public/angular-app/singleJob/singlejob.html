@@ -1,0 +1,35 @@
+<div class="alert alert-danger" ng-if="vm.err" >
+    {{vm.error}}
+</div>
+
+<div ng-hide="vm.jobdeleted" class="single-outer">
+
+<div >
+    <div >
+        <h2> Job Title: &nbsp; {{vm.job.title }} </h2>
+    </div>
+
+        <ul class="list-group list-group-flush">
+         <li >Description  </span> {{vm.job.description}}</li>
+         <li >Salary  </span> {{vm.job.salary| currency}}</li>
+         <li >Date Posted  </span> {{vm.job.postDate | date: "short" }}</li>
+         <li >Experience  </span> {{vm.job.experience}} Years</li> <span></span>
+         <li >Location (Longitude)  </span> {{vm.job.location["coordinates"][0]}}</li> <span></span>
+         <li >Location (Latitude)  </span> {{vm.job.location["coordinates"][1]}} </li> <span></span>
+        
+        </ul>
+      </div><br/><br/>
+    
+      <div >
+
+        
+        <a ng-href="#!/jobUpdate/{{vm.job._id}}/update"> Edit</a> &nbsp; &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger"  ng-click="vm.deleteJob(vm.job._id)" >Delete</button>
+       
+
+      </div>
+ 
+</div>
+ </div>
+
+</div>

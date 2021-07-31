@@ -1,0 +1,37 @@
+<div class="card">
+    <div class="card-header heading">
+        <h2> <strong>List of Jobs</strong></h2>
+
+    </div>
+    <div class="card-body">
+      <div class="card-header">
+       <form  ng-submit="vm.searchJobs()">Search Job by title: <input type="text" name="searchText" ng-model="vm.stext" /> &nbsp;&nbsp; <button>Search</button> </form>
+        <br/>
+         Search job by location<form  ng-submit="vm.GeosearchJobs()">Longitude : <input type="text" required name="lng" ng-model="vm.longitude" /> &nbsp;Latitude:  <input type="text" name="lat" required ng-model="vm.latitude" /><input type="text" name="distance" required ng-model="vm.distance" />&nbsp; <button>search</button> </form>
+
+      </div>
+        <table class="table table-striped table-responsive-md btn-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Job Title</th>
+                
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr ng-repeat="job in vm.jobs">
+                <th scope="row">{{$index +1}}</th>
+                <td>  
+                    {{job.title }}
+                </td>
+                
+                <td><a ng-href="#!/jobs/{{job._id}}">Details</a></td>
+                
+              </tr>
+            </tbody>
+          </table>
+          </div>
+
+  </div>

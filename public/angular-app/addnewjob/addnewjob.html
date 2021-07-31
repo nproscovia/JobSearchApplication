@@ -1,0 +1,60 @@
+
+
+
+<div class="alert alert-danger" ng-if="vm.err" >
+    {{vm.error}}
+</div>
+
+<div class="alert alert-success" ng-if="vm.success" >
+    <h5>{{vm.message}}</h5>
+</div>
+
+<div class="card">
+    <div class="card-header heading">
+        <h2><h2>Add new Job Details </h2></h2>
+
+    </div>
+    <div class="card-body">
+        <form  ng-submit="vm.addJobOpening()">
+            <fieldset>
+            <div class="form-group">
+            <label for="title">Title </label> 
+            <input name="title" class="form-control" ng-model="vm.title" type="text" id="title"  required/> 
+            </div>
+            <div class="form-group">
+                <label for="description">Description </label> 
+              
+                <textarea rows="3" cols="5" class="form-control" ng-model="vm.description"> </textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="salary"> Salary</label> 
+                <input name="salary" class="form-control" ng-model="vm.salary" type="text" id="salary" required /> 
+            </div>
+            
+            <div class="form-group">
+                <label for="experience">Experience in years</label> 
+                <input name="experience" class="form-control" ng-model="vm.experience" type="text" id="experience" required/> 
+            </div>
+
+            <div class="form-group">
+                
+                Longitude : <input style="width:40%;" name="lng" class="form-control" ng-model="vm.lng" type="text" id="lng" required/> <br/>
+               
+                Latitude: <input style="width:40%;" name="lat" class="form-control" ng-model="vm.lat" type="text" id="lat" required/> 
+            </div>
+
+            <div class="form-group">
+                <label for="skills"> Skills </label> 
+                <input name="skills" class="form-control" ng-model="vm.skills" type="text" id="skills" required /> 
+            </div>
+            
+            <br/>
+            
+            <button class="btn btn-success"  name="submit" ng-model="vm.sub" >Submit </button>
+            </fieldset>
+            </form>
+
+
+    </div>
+  </div>
